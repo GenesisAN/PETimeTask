@@ -4,10 +4,10 @@
 
 add by git URL:
 
-`http://anw.noip.cn:8010/Fangjun_Zhou/priority-queue.git#upm-priorityqueue`
+`https://github.com/GenesisAN/PETimeTask.git#upm-petimetask`
 
 or
 
 add with manifest.json
 
-`"com.fintokmak.priorityqueue": "http://anw.noip.cn:8010/Fangjun_Zhou/priority-queue.git#upm-priorityqueue"`
+`"com.fintokmak.petimetask": "https://github.com/GenesisAN/PETimeTask.git#upm-petimetask"`
