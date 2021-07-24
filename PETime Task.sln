@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinTOKMAK.PETimeTask.Runtime", "FinTOKMAK.PETimeTask.Runtime.csproj", "{78921F18-E37B-42EF-23D1-79F8890C7E5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{C4D8C857-0F6F-520F-D7E1-2406E3095A73}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78921F18-E37B-42EF-23D1-79F8890C7E5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78921F18-E37B-42EF-23D1-79F8890C7E5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78921F18-E37B-42EF-23D1-79F8890C7E5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78921F18-E37B-42EF-23D1-79F8890C7E5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4D8C857-0F6F-520F-D7E1-2406E3095A73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4D8C857-0F6F-520F-D7E1-2406E3095A73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4D8C857-0F6F-520F-D7E1-2406E3095A73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4D8C857-0F6F-520F-D7E1-2406E3095A73}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
