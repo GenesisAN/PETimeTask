@@ -9,7 +9,10 @@ namespace FinTOKMAK.PETimeTask
         public static TimeSystem Instance;
         private static readonly string obj = "lock";
         private int _tid;
-        private readonly List<int> _tidList = new List<int>();
+        /// <summary>
+        /// The dictionary that stores all the tid-PETimeTask pair
+        /// </summary>
+        private readonly Dictionary<int, PETimeTask> _tidTaskTable = new Dictionary<int, PETimeTask>();
         /// <summary>
         /// All the running task
         /// </summary>
@@ -93,8 +96,10 @@ namespace FinTOKMAK.PETimeTask
 
             var destTime = Time.realtimeSinceStartup * 1000 + delay;
             // Debug.Log("Add D:" + delay + "| DT:" + destTime + "| TT:" + Time.realtimeSinceStartup * 1000);
-            _addTaskBuffer.Add(new PETimeTask(tid, callback, destTime, delay, count));
-            _tidList.Add(tid);
+            PETimeTask task = new PETimeTask(tid, callback, destTime, delay, count);
+            _addTaskBuffer.Add(task);
+            // Add the task to the tid-Task table
+            _tidTaskTable.Add(tid, task);
             return tid;
         }
 
@@ -105,26 +110,19 @@ namespace FinTOKMAK.PETimeTask
         /// <returns>是否删除成功</returns>
         public bool DeleteTimeTask(int tid)
         {
-            var exist = false;
-            for (var i = 0; i < _timeTaskList.Count; i++)
+            // If the task with certain tid do not exist
+            if (!_tidTaskTable.ContainsKey(tid))
             {
-                var task = _timeTaskList[i];
-                if (task.tid == tid)
-                {
-                    _timeTaskList.RemoveAt(i);
-                    for (var i2 = 0; i2 < _tidList.Count; i2++)
-                        if (_tidList[i2] == tid)
-                        {
-                            _tidList.RemoveAt(i2);
-                            break;
-                        }
-
-                    exist = true;
-                    break;
-                }
+                return false;
             }
 
-            return exist;
+            // remove the task
+            _timeTaskList.Remove(_tidTaskTable[tid]);
+            
+            // remove the tid-Task pair in the table
+            _tidTaskTable.Remove(tid);
+
+            return true;
         }
 
         /// <summary>
@@ -140,18 +138,14 @@ namespace FinTOKMAK.PETimeTask
                 // 安全代码防止tid溢出或者重复
                 while (true)
                 {
-                    if (_tid == int.MaxValue) // tid达到最大时
+                    // tid达到最大时
+                    if (_tid == int.MaxValue)
                         _tid = 0;
-                    var used = false;
-                    foreach (var tid in _tidList)
-                        if (_tid == tid)
-                        {
-                            used = true;
-                            break; // 有使用过，跳出for
-                        }
-
-                    if (!used) // 判断是否有使用过
-                        break; // 没有使用过，该tid有效，直接退出死循环
+                    
+                    // If the tid is not used, break the while look
+                    if (!_tidTaskTable.ContainsKey(_tid))
+                        break;
+                    
                     _tid += 1;
                 }
             }
