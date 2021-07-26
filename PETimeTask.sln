@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinTOKMAK.PETimeTask.Runtime", "FinTOKMAK.PETimeTask.Runtime.csproj", "{315f78b7-5f30-b45e-55d0-03c8e12ca9a5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinTOKMAK.PETimeTask.Tests.Runtime", "FinTOKMAK.PETimeTask.Tests.Runtime.csproj", "{b6e4b10c-3ff1-5eb5-8cd8-9e3f81fd40b5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{315f78b7-5f30-b45e-55d0-03c8e12ca9a5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{315f78b7-5f30-b45e-55d0-03c8e12ca9a5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{315f78b7-5f30-b45e-55d0-03c8e12ca9a5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{315f78b7-5f30-b45e-55d0-03c8e12ca9a5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{b6e4b10c-3ff1-5eb5-8cd8-9e3f81fd40b5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{b6e4b10c-3ff1-5eb5-8cd8-9e3f81fd40b5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{b6e4b10c-3ff1-5eb5-8cd8-9e3f81fd40b5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{b6e4b10c-3ff1-5eb5-8cd8-9e3f81fd40b5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
